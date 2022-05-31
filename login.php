@@ -1,29 +1,34 @@
-<!DOCTYPE html>    
-<html>    
-<head>    
-    <title>Login Form</title>    
-    <link rel="stylesheet" type="text/css" href="login_design.css">    
-</head>    
-<body>    
-    <h2>Login Page</h2><br>    
-    <div class="login">    
-    <form id="login" method="get" action="login.php">    
-        <label><b>User Name     
-        </b>    
-        </label>    
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
-        <br><br>    
-        <label><b>Password     
-        </b>    
-        </label>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
-        <br><br>    
-        <input type="button" name="log" id="log" value="Log In Here">       
-        <br><br>    
-        
-        <br><br>    
-        <a href="forgot.php">Forgot Password</a>    
-    </form>     
-</div>    
-</body>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="login_design.css">
+</head>
+<body>
+<div class="LoginFrm">
+    <form action="" class="form">
+      <h4 class="title">Login</h4>
+
+
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Email</label>
+      </div>
+
+
+      <div class="inputContainer">
+        <input type="text" class="input" placeholder="a">
+        <label for="" class="label">Password</label>
+      </div>
+
+
+
+      <input type="submit" class="submitBtn" value="Login">
+    </form>
+  </div>
+</body>
 </html>
