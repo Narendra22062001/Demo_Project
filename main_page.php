@@ -6,7 +6,7 @@
 </head>
 
  <div class="admin">
- <a href="admin.php"> <input type="button" value="Admin" ></a>
+ <a href="admin\admin.php"> <input type="button" value="Admin" ></a>
  
  <a href="signup.php">  <input type="button" value="Singup" style="float: right;"></a>
  
