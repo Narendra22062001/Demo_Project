@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 50;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 1px;
+  text-align: center;
+}
+
+
+.admin {
+  background-color: #f1f1f1;
+  padding: 10px;
+  
+}
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 50px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+  img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+    }
+	
+	
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-mid {
+  position: absolute;
+  top: 110px;
+  left: 16px;
+}
+
+.top-centered {
+  position: absolute;
+ top:10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.two {
+    border-style: solid;
+    border-width: medium;
+}
