@@ -25,7 +25,7 @@
         <label for="" class="label">Password</label>
       </div>
 
-
+		<a href="forgot.php">Forgot Password</a>
 
       <input type="submit" class="submitBtn" value="Login">
     </form>
