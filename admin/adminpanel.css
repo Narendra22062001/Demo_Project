@@ -7,11 +7,13 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+
 }
 
 body{
    background-color: #f3f5f9;
 }
+
 
 .wrapper{
   display: flex;
@@ -101,6 +103,7 @@ body{
   width: 100%;
   margin-left: 200px;
   position: fixed;
+  z-index: 2;
 }
 
 .wrapper .main_content .header{

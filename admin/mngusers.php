@@ -30,11 +30,11 @@
     }
 
     .usdata .cont_table th{
-      padding: 30px 55px;
+      padding: 20px 55px;
       text-align: center;
     }
     .usdata .cont_table td{
-      padding: 30px 55px;
+      padding: 20px 55px;
       text-align: center;
     }
 
@@ -46,6 +46,7 @@
   <body>
     <div class="usdata">
       <table class="cont_table">
+        <h1>USERS</h1>
         <thead>
           <tr>
             <th>ID</th>

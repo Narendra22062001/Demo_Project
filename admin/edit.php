@@ -1,6 +1,8 @@
 
 <?php
   require("connection.php");
+
+
  ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,7 @@
         outline: none;
       }
       .uppkg p{
-        margin-top: 20px;
+        margin-top: 15px;
         font-size: 20px
       }
       .uppkg button{
@@ -57,7 +59,7 @@
 
     $id2 = $_GET['id'];
 
-    $sql = "SELECT * FROM packages WHERE pkg_id = {$id2}";
+    $sql = "SELECT * FROM tbltourpackages WHERE PackageId = {$id2}";
     $result = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($result)>0){
@@ -66,12 +68,13 @@
       ?>
       <div class="uppkg">
         <form class="uppkg" action="" method="POST" enctype="multipart/form-data">
-          <p>Package Name <input type="text" name="pkgname1" value="<?php echo $row['pkg_name']; ?>"></p>
-          <p>Package Location <input type="text" name="pkgloc1" value="<?php echo $row['pkg_loc']; ?>"></p>
-          <p>Package Price(INR) <input type="text" name="pkgprice1" value="<?php echo $row['pkg_price']; ?>"></p>
-          <p>Package Features <input type="text" name="pkgfea1" value="<?php echo $row['pkg_feature']; ?>"></p>
-          <p>Package Details <textarea class="details" rows="5" cols="50" type="text" name="pkgdetails1" value=""><?php echo $row['pkg_det']; ?></textarea></p>
-          <p>Package Image <input class="image1"type="file" name="image1" value="<?php echo $row['img_dir']; ?>"></p>
+          <p>Package Name <input type="text" name="pkgname1" value="<?php echo $row['PackageName']; ?>"></p>
+          <p>type <input type="text" name="pkgtype2" value="<?php echo $row['PackageType']; ?>"></p>
+          <p>Package Location <input type="text" name="pkgloc1" value="<?php echo $row['PackageLocation']; ?>"></p>
+          <p>Package Price(INR) <input type="text" name="pkgprice1" value="<?php echo $row['PackagePrice']; ?>"></p>
+          <p>Package Features <input type="text" name="pkgfea1" value="<?php echo $row['PackageFetures']; ?>"></p>
+          <p>Package Details <textarea class="details" rows="5" cols="50" type="text" name="pkgdetails1" value=""><?php echo $row['PackageDetails']; ?></textarea></p>
+          <p>Package Image <input class="image1"type="file" name="image1" value="<?php echo $row['PackageImage']; ?>"></p>
           <button type="submit" name="save" value="">SAVE</button>
         </form>
       </div>
@@ -87,18 +90,33 @@
       $pkgde2 = $_POST['pkgdetails1'];
       $file2 = $_FILES['image1']['name'];
       $pkgprice2 = $_POST['pkgprice1'];
+      $ptype = $_POST['pkgtype2'];
+
+      $uploads_dir = "pkg_imgs";
+
+      if (!empty($_POST['pkgname1'] && $_POST['pkgloc1'] && $_POST['pkgfea1'] && $_POST['pkgdetails1'])) {
+        if(!empty($_FILES['image1']['name'])){
+          $sql3 = "UPDATE tbltourpackages SET PackageName='$pkgnam2',PackageLocation='$pkglo2',PackageDetails='$pkgde2',	PackagePrice='$pkgprice2',PackageFetures='$pkgfe2',PackageImage='$file2',PackageType='$ptype' WHERE PackageId = '$id2'";
+
+          $res = mysqli_query($con, $sql3);
+
+          if($res){
+            move_uploaded_file($_FILES['image1']['tmp_name'],"$uploads_dir/$file2");
+          }
+
+        }
+        else{
+          $sql1 = "UPDATE tbltourpackages SET PackageName='$pkgnam2',PackageLocation='$pkglo2',PackageDetails='$pkgde2',	PackagePrice='$pkgprice2',PackageFetures='$pkgfe2', PackageType='$ptype' WHERE PackageId = '$id2'";
+          mysqli_query($con, $sql1);
 
 
-
-      $sql1 = "UPDATE packages SET pkg_name='$pkgnam2',pkg_loc='$pkglo2',pkg_det='$pkgde2',pkg_price='$pkgprice2',pkg_feature='$pkgfe2',img_dir='$file2' WHERE pkg_id = '$id2'";
-      // "UPDATE `packages` SET `pkg_name`='{$pkgnam2}',`pkg_loc`='$pkglo2',`pkg_det`='$pkgfe2',`pkg_price`='$pkgde2',`pkg_feature`='$file2',`img_dir`='$pkgprice2' WHERE 'pkg_id' = '{$id2}'";
+        }
 
 
+      }
 
-      mysqli_query($con, $sql1);
 
-      header("Location: adminpanel.php?page=mngpkg.php");
-      exit;
+       echo "<script> window.location.replace('adminpanel.php?page=mngpkg.php');</script>";
 
 
     }

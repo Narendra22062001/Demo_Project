@@ -9,14 +9,13 @@
         height: auto;
         display: flex;
         margin-top: 30px;
-        margin-left: 20px;
+        margin-left: 15px;
       }
       .box{
-        width: 290px;
-        height: 200px;
+        width: 300px;
+        height: 180px;
         text-align: center;
         line-height: 200px;
-        background: red;
         margin: 15px;
         font-size: 13px;
         color: white;
@@ -34,7 +33,7 @@
     <?php
       require("connection.php");
       $qUsers="SELECT COUNT(*) AS numu FROM user";
-      $qPackages= "SELECT COUNT(*) AS nump FROM packages";
+      $qPackages= "SELECT COUNT(*) AS nump FROM tbltourpackages";
 
       $usersData= mysqli_query($con, $qUsers);
       $packagesData =mysqli_query($con, $qPackages);
@@ -49,21 +48,21 @@
 
      ?>
     <div class="object_Container">
-      <div class="box">
+      <div class="box" style="background: red;">
         <h1 class="num"><?php echo "$Nusers"; ?></h1>
         <h1 class="text">Users</h1>
       </div>
-      <div class="box">
+      <div class="box" style="background: blue;">
         <h1 class="num">4</h1>
-        <h1 class="text">bookings</h1>
+        <h1 class="text">Bookings</h1>
       </div>
-      <div class="box">
+      <div class="box" style="background: purple;">
         <h1 class="num">3</h1>
-        <h1 class="text">enquiries</h1>
+        <h1 class="text">Enquiries</h1>
       </div>
-      <div class="box">
+      <div class="box" style="background: green;">
         <h1 class="num"><?php echo "$Npackages"; ?></h1>
-        <h1 class="text">packages</h1>
+        <h1 class="text">Total Packages</h1>
       </div>
 
     </div>

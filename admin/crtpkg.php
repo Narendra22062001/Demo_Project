@@ -57,6 +57,7 @@
     <div class="crtpkg">
       <form class="create" action="" method="POST" enctype="multipart/form-data">
         <p>Package Name <input type="text" name="pkgname" value=""></p>
+        <p>type <input type="text" name="pkgtype" value=""></p>
         <p>Package Location <input type="text" name="pkgloc" value=""></p>
         <p>Package Price(INR) <input type="text" name="pkgprice" value=""></p>
         <p>Package Features <input type="text" name="pkgfea" value=""></p>
@@ -74,10 +75,11 @@
         $pkgde = $_POST['pkgdetails'];
         $file = $_FILES['image']['name'];
         $pkgprice = $_POST['pkgprice'];
+        $type = $_POST['pkgtype'];
 
         $uploads_dir = "pkg_imgs";
 
-        $query ="INSERT INTO `packages`(`pkg_name`, `pkg_loc`, `pkg_price`, `pkg_det`, `pkg_feature`, `img_dir`) VALUES ('$pkgnam','$pkglo','$pkgprice','$pkgde','$pkgfe','$file')";
+        $query ="INSERT INTO `tbltourpackages`(`PackageName`, `PackageLocation`, `PackagePrice`, `PackageDetails`, `PackageFetures`, `PackageImage`, `PackageType`) VALUES ('$pkgnam','$pkglo','$pkgprice','$pkgde','$pkgfe','$file', '$type')";
 
         $res = mysqli_query($con, $query);
 

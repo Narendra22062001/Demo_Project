@@ -20,7 +20,7 @@ require("connection.php");
       margin: 25px 0;
       font-size: 1.2em;
       min-width: 1100px;
-      margin-left: 100px;
+      margin-left: 60px;
     }
     .cont_table thead tr{
       background-color: #009870;
@@ -33,11 +33,11 @@ require("connection.php");
     }
 
     .cont_table th{
-      padding: 30px 55px;
+      padding: 30px 40px;
       text-align: center;
     }
     .cont_table td{
-      padding: 30px 55px;
+      padding: 30px 40px;
       text-align: center;
     }
 
@@ -75,7 +75,7 @@ require("connection.php");
         <tbody>
           <?php
 
-          $sql = "SELECT * FROM `packages`";
+          $sql = "SELECT * FROM `tbltourpackages`";
           $result = mysqli_query($con, $sql);
 
           if(!$result){
@@ -88,14 +88,14 @@ require("connection.php");
             ?>
 
             <tr>
-                 <td><?php echo$row["pkg_id"]; ?>  </td>
-                 <td><?php echo$row["pkg_name"]; ?>  </td>
-                 <td><?php echo$row["pkg_loc"]; ?>  </td>
-                 <td><?php echo$row["pkg_price"]; ?>  </td>
+                 <td><?php echo$row["PackageId"]; ?>  </td>
+                 <td><?php echo$row["PackageName"]; ?>  </td>
+                 <td><?php echo$row["PackageLocation"]; ?>  </td>
+                 <td><?php echo$row["PackagePrice"]; ?>  </td>
                  <td><?php echo$row["date"]; ?>  </td>
                  <td>
-                   <a class='button' href='adminpanel.php?page=edit.php&id=<?php echo$row["pkg_id"]; ?>'>Update</a>
-                   <a class='button' href='delete.php?id=<?php echo$row["pkg_id"]; ?>'>Delete</a>
+                   <a class='button' href='adminpanel.php?page=edit.php&id=<?php echo$row["PackageId"]; ?>'>Update</a>
+                   <a class='button' href='delete.php?id=<?php echo$row["PackageId"]; ?>'>Delete</a>
                  </td>
 
                  </tr>
